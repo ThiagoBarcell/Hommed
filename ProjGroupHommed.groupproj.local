@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/09/28 20:02:46.000.445,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=C:\Users\Thiago\Documents\Trabalho Faculdade\ProjGroupFarmed.groupproj</Transaction>
+    <Transaction>2024/09/28 20:02:55.000.100,C:\Users\Thiago\Documents\Trabalho Faculdade\ProjGroupFarmed.groupproj=C:\Users\Thiago\Documents\Trabalho Faculdade\ProjGroupHommed.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Users\Thiago\Documents\Projetos Delphi\SYSVET-main\PROJETO\frmPrincipal.dproj"/>
+	</Default.Personality>
+</BorlandProject>

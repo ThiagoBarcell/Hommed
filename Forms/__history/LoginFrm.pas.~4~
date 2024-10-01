@@ -1,0 +1,38 @@
+unit LoginFrm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, Vcl.StdCtrls, cxTextEdit, dxGDIPlusClasses,
+  Vcl.ButtonStylesAttributes, Vcl.Menus, cxButtons, Vcl.StyledButton;
+
+type
+  TForm1 = class(TForm)
+    pnlLogo: TPanel;
+    pnlLogin: TPanel;
+    Image1: TImage;
+    edtUsername: TcxTextEdit;
+    edtPassword: TcxTextEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    btnLogar: TStyledButton;
+    btnCadastrar: TStyledButton;
+    Label4: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

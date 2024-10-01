@@ -1,0 +1,14 @@
+program ProjFarmed;
+
+uses
+  Vcl.Forms,
+  LoginFrm in '..\Forms\LoginFrm.pas' {frmFarmed};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmFarmed, frmFarmed);
+  Application.Run;
+end.

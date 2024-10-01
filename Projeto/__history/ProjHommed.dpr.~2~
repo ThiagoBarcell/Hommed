@@ -1,0 +1,16 @@
+program ProjHommed;
+
+uses
+  Vcl.Forms,
+  LoginFrm in '..\Forms\LoginFrm.pas' {frmFarmed},
+  OperacoesFrm in '..\Forms\OperacoesFrm.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmFarmed, frmFarmed);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

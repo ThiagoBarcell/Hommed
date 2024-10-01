@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/09/28 18:03:30.000.439,=C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/28 18:06:17.000.570,=C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/28 18:27:20.000.840,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Thiago\Documents\Trabalho Faculdade\Forms\LoginFrm.dfm</Transaction>
+    <Transaction>2024/09/28 18:27:20.000.840,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Thiago\Documents\Trabalho Faculdade\Forms\LoginFrm.pas</Transaction>
+    <Transaction>2024/09/28 18:33:03.000.489,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Thiago\Documents\Trabalho Faculdade\Projeto\ProjFarmed.dproj</Transaction>
+    <Transaction>2024/09/28 19:46:44.000.079,=C:\Users\Thiago\Documents\Trabalho Faculdade\Projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/28 20:00:04.000.324,C:\Users\Thiago\Documents\Trabalho Faculdade\Projeto\ProjFarmed.dproj=C:\Users\Thiago\Documents\Trabalho Faculdade\Projeto\ProjHommed.dproj</Transaction>
+    <Transaction>2024/09/28 20:01:59.000.230,C:\Users\Thiago\Documents\Trabalho Faculdade\Projeto\Unit1.pas=C:\Users\Thiago\Documents\Trabalho Faculdade\Forms\OperacoesFrm.pas</Transaction>
+    <Transaction>2024/09/28 20:01:59.000.230,C:\Users\Thiago\Documents\Trabalho Faculdade\Projeto\Unit1.dfm=C:\Users\Thiago\Documents\Trabalho Faculdade\Forms\OperacoesFrm.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,40 @@
+unit OperacoesFrm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, dxSkinsCore,
+  dxSkinsDefaultPainters, dxBarBuiltInMenu, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, Vcl.ButtonStylesAttributes,
+  Vcl.StyledButton, cxPC;
+
+type
+  THommedFrm = class(TForm)
+    pnlTop: TPanel;
+    Panel2: TPanel;
+    pagLogin: TcxPageControl;
+    tabPacienteFind: TcxTabSheet;
+    pnlPacienteFind: TPanel;
+    tabPacienteInfo: TcxTabSheet;
+    pnlCadPaciente: TPanel;
+    btnFindPacientes: TStyledButton;
+    Panel3: TPanel;
+    btnConsultas: TStyledButton;
+    btnRemedios: TStyledButton;
+    StyledButton3: TStyledButton;
+    Bevel1: TBevel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  HommedFrm: THommedFrm;
+
+implementation
+
+{$R *.dfm}
+
+end.
