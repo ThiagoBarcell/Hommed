@@ -13,6 +13,7 @@ object frmFarmed: TfrmFarmed
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnlLogo: TPanel
@@ -6831,14 +6832,17 @@ object frmFarmed: TfrmFarmed
         object edtUsername: TcxTextEdit
           Left = 64
           Top = 168
+          Properties.CharCase = ecUpperCase
           TabOrder = 0
           Width = 233
         end
         object edtPassword: TcxTextEdit
           Left = 64
           Top = 223
+          Properties.CharCase = ecUpperCase
+          Properties.EchoMode = eemPassword
           TabOrder = 1
-          Width = 233
+          Width = 200
         end
         object btnLogar: TStyledButton
           Left = 64
@@ -6848,6 +6852,7 @@ object frmFarmed: TfrmFarmed
           Caption = 'Entrar'
           TabOrder = 2
           StyleElements = [seFont, seBorder]
+          OnClick = btnLogarClick
           StyleClass = 'Emerald'
           ButtonStyleNormal.BorderColor = 4735776
           ButtonStyleNormal.ButtonColor = 4735776
@@ -6869,6 +6874,7 @@ object frmFarmed: TfrmFarmed
           Caption = 'Cadastrar'
           TabOrder = 3
           StyleElements = [seFont, seBorder]
+          OnClick = btnCadastrarClick
           StyleClass = 'Emerald'
           ButtonStyleNormal.BorderColor = 4735776
           ButtonStyleNormal.ButtonColor = 4735776
@@ -6919,11 +6925,279 @@ object frmFarmed: TfrmFarmed
           ButtonStyleDisabled.FontStyle = [fsBold]
           ButtonStyleDisabled.ButtonColor = 13036453
         end
+        object StyledButton2: TStyledButton
+          Left = 270
+          Top = 223
+          Width = 27
+          Height = 21
+          TabOrder = 5
+          StyleElements = [seFont, seBorder]
+          OnClick = StyledButton2Click
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000006060606585858589B9B9B9BBBBBBBBBBBBBBBBB9B9B
+            9B9B585858580606060600000000000000000000000000000000000000000000
+            00000101010171717171E8E8E8E8FFFFFFFFF2F2F2F2B3B3B3B3B9B9B9B9F4F4
+            F4F4FFFFFFFFE8E8E8E871717171010101010000000000000000000000001414
+            1414B8B8B8B8FFFFFFFFFFFFFFFFC3C3C3C31B1B1B1B00000000000000001818
+            1818C2C2C2C2FFFFFFFFFFFFFFFFB8B8B8B814141414000000000D0D0D0DCDCD
+            CDCDFFFFFFFFFFFFFFFFF2F2F2F21B1B1B1B21212121AEAEAEAEB0B0B0B02020
+            202018181818F4F4F4F4FFFFFFFFFFFFFFFFCCCCCCCC0D0D0D0DB8B8B8B8FFFF
+            FFFFFFFFFFFFFFFFFFFFB2B2B2B200000000AFAFAFAFFFFFFFFFFFFFFFFFB0B0
+            B0B000000000B8B8B8B8FFFFFFFFFFFFFFFFFFFFFFFFB8B8B8B8B9B9B9B9FFFF
+            FFFFFFFFFFFFFFFFFFFFB7B7B7B700000000B3B3B3B3FFFFFFFFFFFFFFFFAEAE
+            AEAE00000000B3B3B3B3FFFFFFFFFFFFFFFFFFFFFFFFB8B8B8B80E0E0E0ECECE
+            CECEFFFFFFFFFFFFFFFFF3F3F3F31717171723232323B2B2B2B2B0B0B0B02222
+            22221B1B1B1BF2F2F2F2FFFFFFFFFFFFFFFFCDCDCDCD0D0D0D0D000000001515
+            1515BABABABAFFFFFFFFFFFFFFFFC1C1C1C11717171700000000000000001C1C
+            1C1CC3C3C3C3FFFFFFFFFFFFFFFFB9B9B9B91414141400000000000000000000
+            00000202020272727272E9E9E9E9FFFFFFFFF3F3F3F3B8B8B8B8B3B3B3B3F2F2
+            F2F2FFFFFFFFE8E8E8E871717171010101010000000000000000000000000000
+            00000000000000000000070707075A5A5A5A9E9E9E9EBCBCBCBCBCBCBCBC9D9D
+            9D9D595959590606060600000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000}
+          StyleClass = 'Emerald'
+          ButtonStyleNormal.BorderColor = 4735776
+          ButtonStyleNormal.ButtonColor = 4735776
+          ButtonStylePressed.BorderColor = 13233322
+          ButtonStylePressed.FontColor = clDefault
+          ButtonStylePressed.ButtonColor = 13233322
+          ButtonStyleSelected.BorderColor = 4735776
+          ButtonStyleSelected.ButtonColor = 4735776
+          ButtonStyleHot.BorderColor = 4735776
+          ButtonStyleHot.ButtonColor = 4735776
+          ButtonStyleDisabled.BorderColor = 4735776
+          ButtonStyleDisabled.ButtonColor = 4735776
+        end
       end
     end
     object tabCadastro: TcxTabSheet
       Caption = 'tabCadastro'
       ImageIndex = 1
+      object pnlCadastro: TPanel
+        Left = 0
+        Top = 0
+        Width = 328
+        Height = 410
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alClient
+        BevelOuter = bvNone
+        Color = 13298858
+        ParentBackground = False
+        TabOrder = 0
+        object Label5: TLabel
+          Left = 64
+          Top = 200
+          Width = 37
+          Height = 17
+          Caption = 'Senha'
+          Color = 4735776
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 4735776
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label6: TLabel
+          Left = 88
+          Top = 55
+          Width = 170
+          Height = 40
+          Caption = 'CADASTRAR'
+          Color = 4801568
+          Font.Charset = ANSI_CHARSET
+          Font.Color = 4735776
+          Font.Height = -29
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label7: TLabel
+          Left = 64
+          Top = 149
+          Width = 47
+          Height = 17
+          Caption = 'Usu'#225'rio'
+          Color = 4735776
+          Font.Charset = ANSI_CHARSET
+          Font.Color = 4735776
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edtCadUsuario: TcxTextEdit
+          Left = 64
+          Top = 168
+          Properties.CharCase = ecUpperCase
+          TabOrder = 0
+          Width = 233
+        end
+        object edtCadSenha: TcxTextEdit
+          Left = 64
+          Top = 223
+          Properties.CharCase = ecUpperCase
+          Properties.EchoMode = eemPassword
+          TabOrder = 1
+          Width = 200
+        end
+        object btnCancelCad: TStyledButton
+          Left = 200
+          Top = 320
+          Width = 97
+          Height = 33
+          Caption = 'Cancelar'
+          TabOrder = 2
+          StyleElements = [seFont, seBorder]
+          OnClick = btnCancelCadClick
+          StyleClass = 'Emerald'
+          ButtonStyleNormal.BorderColor = 4735776
+          ButtonStyleNormal.ButtonColor = 4735776
+          ButtonStylePressed.BorderColor = 13233322
+          ButtonStylePressed.FontColor = clDefault
+          ButtonStylePressed.ButtonColor = 13233322
+          ButtonStyleSelected.BorderColor = 4735776
+          ButtonStyleSelected.ButtonColor = 4735776
+          ButtonStyleHot.BorderColor = 4735776
+          ButtonStyleHot.ButtonColor = 4735776
+          ButtonStyleDisabled.BorderColor = 4735776
+          ButtonStyleDisabled.ButtonColor = 4735776
+        end
+        object btnCadUser: TStyledButton
+          Left = 64
+          Top = 320
+          Width = 97
+          Height = 33
+          Caption = 'Cadastrar'
+          TabOrder = 3
+          StyleElements = [seFont, seBorder]
+          OnClick = btnCadUserClick
+          StyleClass = 'Emerald'
+          ButtonStyleNormal.BorderColor = 4735776
+          ButtonStyleNormal.ButtonColor = 4735776
+          ButtonStylePressed.BorderColor = 13233322
+          ButtonStylePressed.FontColor = clDefault
+          ButtonStylePressed.ButtonColor = 13233322
+          ButtonStyleSelected.BorderColor = 4735776
+          ButtonStyleSelected.ButtonColor = 4735776
+          ButtonStyleHot.BorderColor = 4735776
+          ButtonStyleHot.ButtonColor = 4735776
+          ButtonStyleDisabled.BorderColor = 4735776
+          ButtonStyleDisabled.ButtonColor = 4735776
+        end
+        object StyledButton4: TStyledButton
+          Left = 287
+          Top = 0
+          Width = 33
+          Height = 33
+          Caption = 'X'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = 4735776
+          Font.Height = -19
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ModalResult = 8
+          ParentFont = False
+          TabOrder = 4
+          OnClick = StyledButton1Click
+          StyleRadius = 12
+          StyleDrawType = btRounded
+          ButtonStyleNormal.BorderColor = 13036453
+          ButtonStyleNormal.FontColor = 4735776
+          ButtonStyleNormal.FontStyle = [fsBold]
+          ButtonStyleNormal.ButtonColor = 13036453
+          ButtonStylePressed.BorderColor = 13036453
+          ButtonStylePressed.FontColor = clRed
+          ButtonStylePressed.ButtonColor = 13036453
+          ButtonStyleSelected.BorderColor = 13036453
+          ButtonStyleSelected.FontColor = 4735776
+          ButtonStyleSelected.FontStyle = [fsBold]
+          ButtonStyleSelected.ButtonColor = 13036453
+          ButtonStyleHot.BorderColor = 13036453
+          ButtonStyleHot.FontColor = 4735776
+          ButtonStyleHot.FontStyle = [fsBold]
+          ButtonStyleHot.ButtonColor = 13036453
+          ButtonStyleDisabled.BorderColor = 13036453
+          ButtonStyleDisabled.FontColor = 4735776
+          ButtonStyleDisabled.FontStyle = [fsBold]
+          ButtonStyleDisabled.ButtonColor = 13036453
+        end
+        object StyledButton3: TStyledButton
+          Left = 270
+          Top = 223
+          Width = 27
+          Height = 21
+          TabOrder = 5
+          StyleElements = [seFont, seBorder]
+          OnClick = StyledButton3Click
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000006060606585858589B9B9B9BBBBBBBBBBBBBBBBB9B9B
+            9B9B585858580606060600000000000000000000000000000000000000000000
+            00000101010171717171E8E8E8E8FFFFFFFFF2F2F2F2B3B3B3B3B9B9B9B9F4F4
+            F4F4FFFFFFFFE8E8E8E871717171010101010000000000000000000000001414
+            1414B8B8B8B8FFFFFFFFFFFFFFFFC3C3C3C31B1B1B1B00000000000000001818
+            1818C2C2C2C2FFFFFFFFFFFFFFFFB8B8B8B814141414000000000D0D0D0DCDCD
+            CDCDFFFFFFFFFFFFFFFFF2F2F2F21B1B1B1B21212121AEAEAEAEB0B0B0B02020
+            202018181818F4F4F4F4FFFFFFFFFFFFFFFFCCCCCCCC0D0D0D0DB8B8B8B8FFFF
+            FFFFFFFFFFFFFFFFFFFFB2B2B2B200000000AFAFAFAFFFFFFFFFFFFFFFFFB0B0
+            B0B000000000B8B8B8B8FFFFFFFFFFFFFFFFFFFFFFFFB8B8B8B8B9B9B9B9FFFF
+            FFFFFFFFFFFFFFFFFFFFB7B7B7B700000000B3B3B3B3FFFFFFFFFFFFFFFFAEAE
+            AEAE00000000B3B3B3B3FFFFFFFFFFFFFFFFFFFFFFFFB8B8B8B80E0E0E0ECECE
+            CECEFFFFFFFFFFFFFFFFF3F3F3F31717171723232323B2B2B2B2B0B0B0B02222
+            22221B1B1B1BF2F2F2F2FFFFFFFFFFFFFFFFCDCDCDCD0D0D0D0D000000001515
+            1515BABABABAFFFFFFFFFFFFFFFFC1C1C1C11717171700000000000000001C1C
+            1C1CC3C3C3C3FFFFFFFFFFFFFFFFB9B9B9B91414141400000000000000000000
+            00000202020272727272E9E9E9E9FFFFFFFFF3F3F3F3B8B8B8B8B3B3B3B3F2F2
+            F2F2FFFFFFFFE8E8E8E871717171010101010000000000000000000000000000
+            00000000000000000000070707075A5A5A5A9E9E9E9EBCBCBCBCBCBCBCBC9D9D
+            9D9D595959590606060600000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000}
+          StyleClass = 'Emerald'
+          ButtonStyleNormal.BorderColor = 4735776
+          ButtonStyleNormal.ButtonColor = 4735776
+          ButtonStylePressed.BorderColor = 13233322
+          ButtonStylePressed.FontColor = clDefault
+          ButtonStylePressed.ButtonColor = 13233322
+          ButtonStyleSelected.BorderColor = 4735776
+          ButtonStyleSelected.ButtonColor = 4735776
+          ButtonStyleHot.BorderColor = 4735776
+          ButtonStyleHot.ButtonColor = 4735776
+          ButtonStyleDisabled.BorderColor = 4735776
+          ButtonStyleDisabled.ButtonColor = 4735776
+        end
+      end
     end
   end
 end

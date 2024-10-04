@@ -1,0 +1,44 @@
+unit GeralDMFrm;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Phys.IBBase, FireDAC.Comp.UI, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
+
+type
+  TfrmGeralDM = class(TDataModule)
+    dbConect: TFDConnection;
+    fbDriver: TFDPhysFBDriverLink;
+    fdCursorWait: TFDGUIxWaitCursor;
+    qryPaciente: TFDQuery;
+    dtsPaciente: TDataSource;
+    upsPaciente: TFDUpdateSQL;
+    qryPacienteID: TIntegerField;
+    qryPacienteNOME: TStringField;
+    qryPacienteCPF: TStringField;
+    qryPacienteTELEFONE_1: TStringField;
+    qryPacienteTELEFONE_2: TStringField;
+    qryPacienteOBSERVACAO: TStringField;
+    qryPacienteSEXO: TStringField;
+    qryPacienteIDADE: TIntegerField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmGeralDM: TfrmGeralDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

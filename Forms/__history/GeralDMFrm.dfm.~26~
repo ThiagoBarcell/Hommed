@@ -1,0 +1,187 @@
+object frmGeralDM: TfrmGeralDM
+  OldCreateOrder = False
+  Height = 342
+  Width = 475
+  object dbConect: TFDConnection
+    Params.Strings = (
+      'User_Name=sysdba'
+      'Password=masterkey'
+      
+        'Database=C:\Users\Thiago\Documents\Trabalho Faculdade\DataBase\F' +
+        'ARMEDDB.FDB'
+      'Server=localHost'
+      'DriverID=FB')
+    Connected = True
+    Left = 33
+    Top = 26
+  end
+  object fbDriver: TFDPhysFBDriverLink
+    VendorLib = 
+      'C:\Users\Thiago\Documents\Trabalho Faculdade\Dependencias\fbclie' +
+      'nt.dll'
+    Left = 33
+    Top = 79
+  end
+  object fdCursorWait: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 33
+    Top = 132
+  end
+  object qryPaciente: TFDQuery
+    OnNewRecord = qryPacienteNewRecord
+    Connection = dbConect
+    UpdateObject = upsPaciente
+    SQL.Strings = (
+      'SELECT'
+      '  id,'
+      '  nome,'
+      '  cpf,'
+      '  telefone_1,'
+      '  telefone_2,'
+      '  observacao,'
+      '  sexo,'
+      '  data_cad,'
+      '  idade'
+      '  FROM PACIENTES')
+    Left = 128
+    Top = 28
+    object qryPacienteID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qryPacienteNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Size = 250
+    end
+    object qryPacienteCPF: TStringField
+      FieldName = 'CPF'
+      Origin = 'CPF'
+      Size = 50
+    end
+    object qryPacienteTELEFONE_1: TStringField
+      FieldName = 'TELEFONE_1'
+      Origin = 'TELEFONE_1'
+      Size = 50
+    end
+    object qryPacienteTELEFONE_2: TStringField
+      FieldName = 'TELEFONE_2'
+      Origin = 'TELEFONE_2'
+      Size = 50
+    end
+    object qryPacienteOBSERVACAO: TStringField
+      FieldName = 'OBSERVACAO'
+      Origin = 'OBSERVACAO'
+      Size = 2500
+    end
+    object qryPacienteSEXO: TStringField
+      FieldName = 'SEXO'
+      Origin = 'SEXO'
+    end
+    object qryPacienteIDADE: TIntegerField
+      FieldName = 'IDADE'
+      Origin = 'IDADE'
+    end
+    object qryPacienteDATA_CAD: TDateField
+      FieldName = 'DATA_CAD'
+      Origin = 'DATA_CAD'
+    end
+  end
+  object dtsPaciente: TDataSource
+    DataSet = qryPaciente
+    Left = 128
+    Top = 84
+  end
+  object upsPaciente: TFDUpdateSQL
+    Connection = dbConect
+    InsertSQL.Strings = (
+      
+        'INSERT INTO PACIENTES (id,  nome,  cpf,  telefone_1,  telefone_2' +
+        ',  observacao,'
+      
+        '  sexo, idade )VALUES ( :id,  :nome,  :cpf,  :telefone_1,  :tele' +
+        'fone_2,  :observacao,'
+      '  :sexo, :idade )')
+    ModifySQL.Strings = (
+      '  UPDATE PACIENTES'
+      'SET id = :id ,'
+      '    nome = :nome,'
+      '    cpf =:cpf,'
+      '    telefone_1 = :telefone_1,'
+      '    telefone_2 = :telefone_2,'
+      '    observacao = :observacao,'
+      '    sexo = :sexo,'
+      '    idade = :idade'
+      'WHERE id = :old_id')
+    DeleteSQL.Strings = (
+      'DELETE FROM PACIENTES'
+      'WHERE id = :old_id')
+    Left = 128
+    Top = 140
+  end
+  object qryConsulta: TFDQuery
+    OnNewRecord = qryPacienteNewRecord
+    Connection = dbConect
+    UpdateObject = upsConsulta
+    SQL.Strings = (
+      'SELECT'
+      '  ID_PACIENTE,'
+      '  MEDICO,'
+      '  CONSULTA_DESC,'
+      '  DATA,'
+      '  ID'
+      '  FROM CONSULTA'
+      '  --WHERE ID_PACIENTE = :ID_PACIENTE')
+    Left = 208
+    Top = 28
+    object qryConsultaID_PACIENTE: TIntegerField
+      FieldName = 'ID_PACIENTE'
+      Origin = 'ID_PACIENTE'
+    end
+    object qryConsultaMEDICO: TStringField
+      FieldName = 'MEDICO'
+      Origin = 'MEDICO'
+      Size = 50
+    end
+    object qryConsultaCONSULTA_DESC: TStringField
+      FieldName = 'CONSULTA_DESC'
+      Origin = 'CONSULTA_DESC'
+      Size = 100
+    end
+    object qryConsultaDATA: TDateField
+      FieldName = 'DATA'
+      Origin = '"DATA"'
+    end
+    object qryConsultaID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+    end
+  end
+  object dtsConsulta: TDataSource
+    DataSet = qryConsulta
+    Left = 208
+    Top = 84
+  end
+  object upsConsulta: TFDUpdateSQL
+    Connection = dbConect
+    InsertSQL.Strings = (
+      'INSERT INTO CONSULTA (ID_PACIENTE,MEDICO,CONSULTA_DESC,DATA )'
+      '  VALUES ( :ID_PACIENTE,:MEDICO,:CONSULTA_DESC,:DATA, :ID )')
+    ModifySQL.Strings = (
+      '    UPDATE CONSULTA'
+      'SET'
+      '  ID_PACIENTE = :ID_PACIENTE,'
+      '  MEDICO = :MEDICO,'
+      '  CONSULTA_DESC = :CONSULTA_DESC,'
+      '  DATA = :DATA,'
+      '  ID = :ID'
+      'WHERE id = :old_id')
+    DeleteSQL.Strings = (
+      'DELETE FROM CONSULTA'
+      'WHERE id = :old_id')
+    Left = 208
+    Top = 140
+  end
+end

@@ -13,6 +13,7 @@ object HommedFrm: THommedFrm
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Bevel1: TBevel
@@ -24,6 +25,16 @@ object HommedFrm: THommedFrm
     Shape = bsTopLine
     Style = bsRaised
     ExplicitTop = 33
+  end
+  object Bevel2: TBevel
+    Left = 0
+    Top = 106
+    Width = 988
+    Height = 2
+    Align = alTop
+    Shape = bsTopLine
+    Style = bsRaised
+    ExplicitTop = 57
   end
   object pnlTop: TPanel
     Left = 0
@@ -5454,38 +5465,32 @@ object HommedFrm: THommedFrm
   object Panel2: TPanel
     Left = 0
     Top = 51
-    Width = 201
-    Height = 571
-    Align = alLeft
+    Width = 988
+    Height = 55
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 65
-    ExplicitHeight = 413
     object Panel3: TPanel
       Left = 0
       Top = 0
-      Width = 201
-      Height = 571
+      Width = 988
+      Height = 57
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
       Margins.Bottom = 0
-      Align = alClient
+      Align = alTop
       BevelOuter = bvNone
       Color = 10079580
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = 3
-      ExplicitWidth = 199
-      ExplicitHeight = 604
       object btnFindPacientes: TStyledButton
         AlignWithMargins = True
         Left = 3
-        Top = 5
-        Width = 195
-        Height = 44
-        Margins.Top = 5
-        Align = alTop
+        Top = 3
+        Width = 321
+        Height = 51
+        Align = alLeft
         Caption = 'Pacientes'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5495,6 +5500,7 @@ object HommedFrm: THommedFrm
         ParentFont = False
         TabOrder = 0
         StyleElements = [seFont, seBorder]
+        OnClick = btnFindPacientesClick
         StyleClass = 'Emerald'
         ButtonStyleNormal.BorderColor = 4735776
         ButtonStyleNormal.ButtonColor = 4735776
@@ -5507,18 +5513,14 @@ object HommedFrm: THommedFrm
         ButtonStyleHot.ButtonColor = 4735776
         ButtonStyleDisabled.BorderColor = 4735776
         ButtonStyleDisabled.ButtonColor = 4735776
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 199
       end
       object btnConsultas: TStyledButton
         AlignWithMargins = True
-        Left = 3
-        Top = 119
-        Width = 195
-        Height = 44
-        Margins.Top = 10
-        Align = alTop
+        Left = 330
+        Top = 3
+        Width = 321
+        Height = 51
+        Align = alLeft
         Caption = 'Consultas'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5528,6 +5530,7 @@ object HommedFrm: THommedFrm
         ParentFont = False
         TabOrder = 1
         StyleElements = [seFont, seBorder]
+        OnClick = btnConsultasClick
         StyleClass = 'Emerald'
         ButtonStyleNormal.BorderColor = 4735776
         ButtonStyleNormal.ButtonColor = 4735776
@@ -5540,18 +5543,14 @@ object HommedFrm: THommedFrm
         ButtonStyleHot.ButtonColor = 4735776
         ButtonStyleDisabled.BorderColor = 4735776
         ButtonStyleDisabled.ButtonColor = 4735776
-        ExplicitLeft = 0
-        ExplicitTop = 88
-        ExplicitWidth = 199
       end
       object btnRemedios: TStyledButton
         AlignWithMargins = True
-        Left = 3
-        Top = 62
-        Width = 195
-        Height = 44
-        Margins.Top = 10
-        Align = alTop
+        Left = 657
+        Top = 3
+        Width = 321
+        Height = 51
+        Align = alLeft
         Caption = 'Remedios'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5561,6 +5560,7 @@ object HommedFrm: THommedFrm
         ParentFont = False
         TabOrder = 2
         StyleElements = [seFont, seBorder]
+        OnClick = btnRemediosClick
         StyleClass = 'Emerald'
         ButtonStyleNormal.BorderColor = 4735776
         ButtonStyleNormal.ButtonColor = 4735776
@@ -5573,49 +5573,52 @@ object HommedFrm: THommedFrm
         ButtonStyleHot.ButtonColor = 4735776
         ButtonStyleDisabled.BorderColor = 4735776
         ButtonStyleDisabled.ButtonColor = 4735776
-        ExplicitLeft = 4
       end
     end
   end
   object pagLogin: TcxPageControl
-    Left = 201
-    Top = 51
-    Width = 787
-    Height = 571
+    Left = 0
+    Top = 108
+    Width = 988
+    Height = 514
     Margins.Left = 5
     Margins.Top = 0
     Margins.Right = 0
     Margins.Bottom = 0
     Align = alClient
+    Color = 10079580
+    DragCursor = crArrow
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBtnFace
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
     TabOrder = 2
-    Properties.ActivePage = tabPacienteInfo
+    Properties.ActivePage = pagRemedios
     Properties.CustomButtons.Buttons = <>
     Properties.HideTabs = True
-    LookAndFeel.Kind = lfStandard
+    Properties.Style = 9
+    LookAndFeel.Kind = lfFlat
     LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'UserSkin'
-    ExplicitLeft = 330
-    ExplicitTop = 0
-    ExplicitWidth = 330
-    ExplicitHeight = 412
-    ClientRectBottom = 570
-    ClientRectLeft = 1
-    ClientRectRight = 786
-    ClientRectTop = 1
+    ClientRectBottom = 514
+    ClientRectRight = 988
+    ClientRectTop = 0
     object tabPacienteFind: TcxTabSheet
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
       Margins.Bottom = 0
-      Caption = 'Paciente'
+      Caption = 'Listagem'
       ImageIndex = 0
-      ExplicitWidth = 328
-      ExplicitHeight = 410
+      OnShow = tabPacienteFindShow
       object pnlPacienteFind: TPanel
         Left = 0
         Top = 0
-        Width = 785
-        Height = 569
+        Width = 988
+        Height = 514
         Margins.Left = 0
         Margins.Top = 0
         Margins.Right = 0
@@ -5625,35 +5628,340 @@ object HommedFrm: THommedFrm
         Color = 13298858
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 328
-        ExplicitHeight = 410
-        object cxGrid1: TcxGrid
-          Left = 5
-          Top = 5
-          Width = 772
-          Height = 559
+        object grdPacientes: TcxGrid
+          Left = 0
+          Top = 0
+          Width = 988
+          Height = 514
+          Align = alLeft
+          BevelOuter = bvNone
           TabOrder = 0
-          object cxGrid1DBTableView1: TcxGridDBTableView
+          object grdPacientesDBTableView1: TcxGridDBTableView
             Navigator.Buttons.CustomButtons = <>
+            OnCellDblClick = grdPacientesDBTableView1CellDblClick
+            DataController.DataSource = frmGeralDM.dtsPaciente
             DataController.Summary.DefaultGroupSummaryItems = <>
             DataController.Summary.FooterSummaryItems = <>
             DataController.Summary.SummaryGroups = <>
+            OptionsSelection.CellSelect = False
+            OptionsView.GroupByBox = False
+            object grdPacientesDBTableView1Column1: TcxGridDBColumn
+              Caption = 'Nome'
+              DataBinding.FieldName = 'NOME'
+              HeaderAlignmentHorz = taCenter
+              Width = 327
+            end
+            object grdPacientesDBTableView1Column2: TcxGridDBColumn
+              DataBinding.FieldName = 'CPF'
+              HeaderAlignmentHorz = taCenter
+              Width = 325
+            end
+            object grdPacientesDBTableView1Column3: TcxGridDBColumn
+              Caption = 'Observa'#231#227'o'
+              DataBinding.FieldName = 'OBSERVACAO'
+              HeaderAlignmentHorz = taCenter
+              Width = 326
+            end
           end
-          object cxGrid1Level1: TcxGridLevel
-            GridView = cxGrid1DBTableView1
+          object grdPacientesLevel1: TcxGridLevel
+            GridView = grdPacientesDBTableView1
           end
         end
       end
     end
-    object tabPacienteInfo: TcxTabSheet
-      Caption = 'tabPacienteInfo'
+    object tabCadPaciente: TcxTabSheet
+      Color = 10275934
       ImageIndex = 1
-      ExplicitHeight = 604
-      object pnlCadPaciente: TPanel
+      ParentColor = False
+      OnShow = tabCadPacienteShow
+      object cxLabel1: TcxLabel
+        Left = 56
+        Top = 21
+        Caption = 'Nome :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxDBTextEdit2: TcxDBTextEdit
+        Left = 104
+        Top = 68
+        DataBinding.DataField = 'CPF'
+        DataBinding.DataSource = frmGeralDM.dtsPaciente
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 1
+        Width = 190
+      end
+      object cxLabel2: TcxLabel
+        Left = 68
+        Top = 68
+        Caption = 'CPF :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxLabel16: TcxLabel
+        Left = 44
+        Top = 115
+        Caption = 'Telefone :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxDBTextEdit10: TcxDBTextEdit
+        Left = 200
+        Top = 114
+        DataBinding.DataField = 'TELEFONE_1'
+        DataBinding.DataSource = frmGeralDM.dtsPaciente
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 4
+        Width = 177
+      end
+      object cxImageComboBox1: TcxImageComboBox
+        Left = 104
+        Top = 115
+        EditValue = 0
+        ParentFont = False
+        Properties.Items = <
+          item
+            Description = 'Comercial'
+            ImageIndex = 0
+            Value = 0
+          end
+          item
+            Description = 'Residencial'
+            Value = 1
+          end
+          item
+            Description = 'Celular'
+            Value = 2
+          end
+          item
+            Description = 'Whatsapp'
+            Value = 3
+          end
+          item
+            Description = 'Outros'
+            Value = 5
+          end>
+        Style.Color = clBtnHighlight
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 5
+        Width = 90
+      end
+      object cxLabel7: TcxLabel
+        Left = 439
+        Top = 68
+        Caption = 'Sexo :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cmbSexo: TcxDBImageComboBox
+        Left = 480
+        Top = 66
+        DataBinding.DataField = 'SEXO'
+        DataBinding.DataSource = frmGeralDM.dtsPaciente
+        ParentFont = False
+        Properties.Items = <
+          item
+            Description = 'N'#227'o Informar'
+            ImageIndex = 0
+            Value = 'N'
+          end
+          item
+            Description = 'Homem'
+            Value = 'H'
+          end
+          item
+            Description = 'Mulher'
+            Value = 'M'
+          end>
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 7
+        Width = 118
+      end
+      object cxDBTextEdit3: TcxDBTextEdit
+        Left = 104
+        Top = 20
+        DataBinding.DataField = 'NOME'
+        DataBinding.DataSource = frmGeralDM.dtsPaciente
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 8
+        Width = 494
+      end
+      object cxLabel10: TcxLabel
+        Left = 319
+        Top = 68
+        Caption = 'Idade :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxDBTextEdit4: TcxDBTextEdit
+        Left = 364
+        Top = 68
+        DataBinding.DataField = 'IDADE'
+        DataBinding.DataSource = frmGeralDM.dtsPaciente
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 10
+        Width = 63
+      end
+      object cxLabel5: TcxLabel
+        Left = 4
+        Top = 163
+        Caption = 'Telefone( Extra ) :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+      object cxImageComboBox2: TcxImageComboBox
+        Left = 104
+        Top = 162
+        EditValue = 0
+        ParentFont = False
+        Properties.Items = <
+          item
+            Description = 'Comercial'
+            ImageIndex = 0
+            Value = 0
+          end
+          item
+            Description = 'Residencial'
+            Value = 1
+          end
+          item
+            Description = 'Celular'
+            Value = 2
+          end
+          item
+            Description = 'Whatsapp'
+            Value = 3
+          end
+          item
+            Description = 'Outros'
+            Value = 5
+          end>
+        Style.Color = clBtnHighlight
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 12
+        Width = 90
+      end
+      object cxDBTextEdit1: TcxDBTextEdit
+        Left = 200
+        Top = 162
+        DataBinding.DataField = 'TELEFONE_2'
+        DataBinding.DataSource = frmGeralDM.dtsPaciente
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+        TabOrder = 13
+        Width = 177
+      end
+      object DBMemo1: TDBMemo
+        Left = 104
+        Top = 210
+        Width = 494
+        Height = 257
+        DataField = 'OBSERVACAO'
+        DataSource = frmGeralDM.dtsPaciente
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 14
+      end
+      object cxLabel6: TcxLabel
+        Left = 23
+        Top = 210
+        Caption = 'Observa'#231#245'es :'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 4735776
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.IsFontAssigned = True
+      end
+    end
+    object pagConsulta: TcxTabSheet
+      Color = 10275934
+      ImageIndex = 2
+      ParentColor = False
+      OnShow = pagConsultaShow
+      object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 785
-        Height = 569
+        Width = 988
+        Height = 514
         Margins.Left = 0
         Margins.Top = 0
         Margins.Right = 0
@@ -5663,10 +5971,289 @@ object HommedFrm: THommedFrm
         Color = 13298858
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = -16
-        ExplicitTop = 2
-        ExplicitWidth = 780
-        ExplicitHeight = 610
+        object lblPaciente: TLabel
+          Left = 20
+          Top = 16
+          Width = 165
+          Height = 25
+          Caption = 'Paciente Atual :'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 4735776
+          Font.Height = -21
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object grdConsulta: TcxGrid
+          Left = 421
+          Top = 16
+          Width = 540
+          Height = 449
+          BevelOuter = bvNone
+          TabOrder = 0
+          object cxGridDBTableView1: TcxGridDBTableView
+            Navigator.Buttons.CustomButtons = <>
+            OnCellDblClick = grdPacientesDBTableView1CellDblClick
+            DataController.DataSource = frmGeralDM.dtsConsulta
+            DataController.Summary.DefaultGroupSummaryItems = <>
+            DataController.Summary.FooterSummaryItems = <>
+            DataController.Summary.SummaryGroups = <>
+            OptionsSelection.CellSelect = False
+            OptionsView.ColumnAutoWidth = True
+            OptionsView.GroupByBox = False
+            object cxGridDBColumn1: TcxGridDBColumn
+              Caption = 'Consulta'
+              DataBinding.FieldName = 'CONSULTA_DESC'
+              HeaderAlignmentHorz = taCenter
+              Width = 200
+            end
+            object cxGridDBColumn2: TcxGridDBColumn
+              Caption = 'M'#233'dico'
+              DataBinding.FieldName = 'MEDICO'
+              HeaderAlignmentHorz = taCenter
+              Width = 214
+            end
+            object cxGridDBColumn3: TcxGridDBColumn
+              Caption = 'Data'
+              DataBinding.FieldName = 'DATA'
+              PropertiesClassName = 'TcxDateEditProperties'
+              HeaderAlignmentHorz = taCenter
+              Width = 208
+            end
+          end
+          object cxGridLevel1: TcxGridLevel
+            GridView = cxGridDBTableView1
+          end
+        end
+        object cxLabel3: TcxLabel
+          Left = 78
+          Top = 109
+          Caption = 'Consulta :'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -11
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+        end
+        object cxLabel4: TcxLabel
+          Left = 85
+          Top = 156
+          Caption = 'M'#233'dico :'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -11
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+        end
+        object cxLabel8: TcxLabel
+          Left = 51
+          Top = 203
+          Caption = 'Data Consulta :'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -11
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+        end
+        object edtConsulta: TcxTextEdit
+          Left = 142
+          Top = 108
+          Style.TextColor = clBtnText
+          TabOrder = 4
+          Width = 222
+        end
+        object edtMedico: TcxTextEdit
+          Left = 142
+          Top = 155
+          Style.TextColor = clBtnText
+          TabOrder = 5
+          Width = 222
+        end
+        object edtDataConsulta: TcxDateEdit
+          Left = 142
+          Top = 202
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBtnText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+          TabOrder = 6
+          Width = 222
+        end
+        object cxDBLabel1: TcxDBLabel
+          Left = 191
+          Top = 16
+          DataBinding.DataField = 'NOME'
+          DataBinding.DataSource = frmGeralDM.dtsPaciente
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -19
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+          Height = 33
+          Width = 212
+        end
+      end
+    end
+    object pagRemedios: TcxTabSheet
+      Color = 10275934
+      ImageIndex = 3
+      ParentColor = False
+      OnShow = pagRemediosShow
+      object Panel4: TPanel
+        Left = 0
+        Top = 0
+        Width = 988
+        Height = 514
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alClient
+        BevelOuter = bvNone
+        Color = 13298858
+        ParentBackground = False
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 20
+          Top = 16
+          Width = 165
+          Height = 25
+          Caption = 'Paciente Atual :'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 4735776
+          Font.Height = -21
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object grdRemedios: TcxGrid
+          Left = 421
+          Top = 16
+          Width = 540
+          Height = 449
+          BevelOuter = bvNone
+          TabOrder = 0
+          object cxGridDBTableView2: TcxGridDBTableView
+            Navigator.Buttons.CustomButtons = <>
+            DataController.DataSource = frmGeralDM.dtsRemedios
+            DataController.Summary.DefaultGroupSummaryItems = <>
+            DataController.Summary.FooterSummaryItems = <>
+            DataController.Summary.SummaryGroups = <>
+            OptionsSelection.CellSelect = False
+            OptionsView.ColumnAutoWidth = True
+            OptionsView.GroupByBox = False
+            object cxGridDBTableView2Column1: TcxGridDBColumn
+              Caption = 'C'#243'digo'
+              DataBinding.FieldName = 'ID'
+              HeaderAlignmentHorz = taCenter
+              Width = 65
+            end
+            object cxGridDBColumn4: TcxGridDBColumn
+              Caption = 'Descri'#231#227'o'
+              DataBinding.FieldName = 'DESCRICAO'
+              HeaderAlignmentHorz = taCenter
+              Width = 206
+            end
+            object cxGridDBColumn5: TcxGridDBColumn
+              Caption = 'Laborat'#243'rio'
+              DataBinding.FieldName = 'LABORATORIO'
+              HeaderAlignmentHorz = taCenter
+              Width = 135
+            end
+            object cxGridDBColumn6: TcxGridDBColumn
+              Caption = 'Quantidade'
+              DataBinding.FieldName = 'QUANTIDADE'
+              HeaderAlignmentHorz = taCenter
+              Width = 132
+            end
+          end
+          object cxGridLevel2: TcxGridLevel
+            GridView = cxGridDBTableView2
+          end
+        end
+        object cxLabel9: TcxLabel
+          Left = 78
+          Top = 109
+          Caption = 'Descri'#231#227'o :'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -11
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+        end
+        object cxLabel11: TcxLabel
+          Left = 66
+          Top = 156
+          Caption = 'Laborat'#243'rio :'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -11
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+        end
+        object cxLabel12: TcxLabel
+          Left = 35
+          Top = 203
+          Caption = 'Quantidade( ML ) :'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -11
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+        end
+        object edtDescRemedio: TcxTextEdit
+          Left = 143
+          Top = 108
+          Style.TextColor = clBtnText
+          TabOrder = 4
+          Width = 222
+        end
+        object edtLabRemedio: TcxTextEdit
+          Left = 143
+          Top = 155
+          Style.TextColor = clBtnText
+          TabOrder = 5
+          Width = 222
+        end
+        object cxDBLabel2: TcxDBLabel
+          Left = 191
+          Top = 16
+          DataBinding.DataField = 'NOME'
+          DataBinding.DataSource = frmGeralDM.dtsPaciente
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = 4735776
+          Style.Font.Height = -19
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
+          Height = 33
+          Width = 212
+        end
+        object edtQTDRemedio: TcxTextEdit
+          Left = 143
+          Top = 202
+          Style.TextColor = clBtnText
+          TabOrder = 7
+          Width = 222
+        end
       end
     end
   end
@@ -5680,6 +6267,107 @@ object HommedFrm: THommedFrm
     Color = 10275934
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 8
+    object Bevel3: TBevel
+      Left = 0
+      Top = 0
+      Width = 988
+      Height = 2
+      Align = alTop
+      Shape = bsTopLine
+      Style = bsRaised
+      ExplicitTop = 8
+    end
+    object btnCadGeral: TStyledButton
+      AlignWithMargins = True
+      Left = 794
+      Top = 5
+      Width = 191
+      Height = 41
+      Align = alRight
+      Caption = 'Cadastrar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      StyleElements = [seFont, seBorder]
+      OnClick = btnCadGeralClick
+      StyleClass = 'Emerald'
+      ButtonStyleNormal.BorderColor = 4735776
+      ButtonStyleNormal.ButtonColor = 4735776
+      ButtonStylePressed.BorderColor = 13233322
+      ButtonStylePressed.FontColor = clDefault
+      ButtonStylePressed.ButtonColor = 13233322
+      ButtonStyleSelected.BorderColor = 4735776
+      ButtonStyleSelected.ButtonColor = 4735776
+      ButtonStyleHot.BorderColor = 4735776
+      ButtonStyleHot.ButtonColor = 4735776
+      ButtonStyleDisabled.BorderColor = 4735776
+      ButtonStyleDisabled.ButtonColor = 4735776
+      ExplicitTop = 6
+    end
+    object btnDelGeral: TStyledButton
+      AlignWithMargins = True
+      Left = 597
+      Top = 5
+      Width = 191
+      Height = 41
+      Align = alRight
+      Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      StyleElements = [seFont, seBorder]
+      OnClick = btnDelGeralClick
+      StyleClass = 'Emerald'
+      ButtonStyleNormal.BorderColor = 4735776
+      ButtonStyleNormal.ButtonColor = 4735776
+      ButtonStylePressed.BorderColor = 13233322
+      ButtonStylePressed.FontColor = clDefault
+      ButtonStylePressed.ButtonColor = 13233322
+      ButtonStyleSelected.BorderColor = 4735776
+      ButtonStyleSelected.ButtonColor = 4735776
+      ButtonStyleHot.BorderColor = 4735776
+      ButtonStyleHot.ButtonColor = 4735776
+      ButtonStyleDisabled.BorderColor = 4735776
+      ButtonStyleDisabled.ButtonColor = 4735776
+    end
+    object btnSalvar: TStyledButton
+      AlignWithMargins = True
+      Left = 400
+      Top = 5
+      Width = 191
+      Height = 41
+      Align = alRight
+      Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+      StyleElements = [seFont, seBorder]
+      OnClick = btnSalvarClick
+      StyleClass = 'Emerald'
+      ButtonStyleNormal.BorderColor = 4735776
+      ButtonStyleNormal.ButtonColor = 4735776
+      ButtonStylePressed.BorderColor = 13233322
+      ButtonStylePressed.FontColor = clDefault
+      ButtonStylePressed.ButtonColor = 13233322
+      ButtonStyleSelected.BorderColor = 4735776
+      ButtonStyleSelected.ButtonColor = 4735776
+      ButtonStyleHot.BorderColor = 4735776
+      ButtonStyleHot.ButtonColor = 4735776
+      ButtonStyleDisabled.BorderColor = 4735776
+      ButtonStyleDisabled.ButtonColor = 4735776
+    end
   end
 end
